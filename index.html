@@ -1,0 +1,205 @@
+﻿<html>
+<head>
+<title>Bingo</title>
+<!--<link rel="stylesheet" href="Bingo.css">-->
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+</head>
+<body>
+<style>
+table{
+	border: 2px solid black;
+	width: 95%;
+	height: 95%;
+	margin-top: 30px;
+}
+td{
+	border: 2px solid #707070;
+	width: 33%;
+	height: 33%;
+	text-align: center;
+	font-size: 40px;
+	background-color: white;
+	text-shadow: 1px 1px gray;
+	font-family: 'Roboto Slab', serif;
+}
+body{
+	background-color: #c2ffba;
+	animation: colorchange 30s infinite;
+}
+@keyframes colorchange{
+	0%{background-color: #c2ffba;}
+	50%{background-color: #8dc985;}
+	100%{background-color: #c2ffba;}
+}
+td:hover{
+	color: Gray;
+	text-shadow: 1px 1px black;
+}
+</style>
+<div>
+<table align="center">
+	<tr>
+		<td onclick="Eins()" id="1" style="background-color: white;">Text</td>
+		<td id="2" onclick="Zwei()">Text2</td>
+		<td id="3" onclick="Drei()">Text3</td>
+	</tr>
+	<tr>
+		<td id="4" onclick="Vier()">Text 4</td>
+		<td id="5" onclick="Fuenf()">Text 5</td>
+		<td id="6" onclick="Sechs()">Text 6</td>
+	</tr>
+	<tr>
+		<td id="7" onclick="Sieben()">Text 7</td>
+		<td id="8" onclick="Acht()">Text 8</td>
+		<td id="9" onclick="Neun()">Text 9</td>
+	</tr>
+
+
+</table>
+</div>
+<script>
+var arr =  new Array("0", 1, "2", "3", "4", "5", "6", "7", "8");
+//document.getElementById("4").innerHTML = arr[1];
+//var rdm = Math.round(Math.random() * arr.length);
+//document.getElementById("4").innerHTML = rdm;
+var t11 = 0;
+var t12 = 0;
+var t13 = 0;
+var t21 = 0;
+var t22 = 0;
+var t23 = 0;
+var t31 = 0;
+var t32 = 0;
+var t33 = 0;
+
+function calculate(){
+	//var rdm = Math.round(Math.random() * arr.length);
+	var numbers = new Array("Schlechter Witz", "Urlaub", "Witz über Ausländer", "Video", "Mit Medien rumspielen", "Technische Probleme", "Wir hängen hinterher", "Das schaffen wir nicht mehr", "Das kennt ihr nicht mehr", "Komische Geräusche", "Imitation", "Singt Lied");
+	for(y = 0;y < 9; y++){
+		var rdm = Math.round(Math.random() * (numbers.length-1));
+		var zahl = numbers[rdm];
+		var del = zahl - 1;
+		var test1 = 0;
+		numbers.splice(rdm, 1);
+		
+		if(y == 0){
+		document.getElementById("1").innerHTML = zahl;
+	}
+	else if(y == 1){
+		document.getElementById("2").innerHTML = zahl;
+	}
+	else if(y == 2){
+		document.getElementById("3").innerHTML = zahl;
+	}
+	else if(y == 3){
+		document.getElementById("4").innerHTML = zahl;
+	}
+	else if(y == 4){
+		document.getElementById("5").innerHTML = zahl;
+	}
+	else if(y == 5){
+		document.getElementById("6").innerHTML = zahl;
+	}
+	else if(y	== 6){
+		document.getElementById("7").innerHTML = zahl;
+	}
+	else if(y	== 7){
+		document.getElementById("8").innerHTML = zahl;
+	}
+	else if(y == 8){
+		document.getElementById("9").innerHTML = zahl;
+	}
+	else{
+		document.write("Fehler");
+	}
+	}
+	
+}
+calculate();
+function Eins(){
+	//document.td.style.backgroundColor = "red";
+	//document.getElementById("1").innerHTML = "WOW";
+	document.getElementById('1').style.backgroundColor='#b50000';
+	t11 = 1;
+	//document.getElementById("1").innerHTML = t11;
+	winner();
+}
+function Zwei(){
+	document.getElementById('2').style.backgroundColor='#b50000';
+	t12 = 1;
+	//document.getElementById("2").innerHTML = t12;
+	winner();
+}
+function Drei(){
+	document.getElementById('3').style.backgroundColor='#b50000';
+	t13 = 1;
+	//document.getElementById("3").innerHTML = t13;
+	winner();
+}
+function Vier(){
+	document.getElementById('4').style.backgroundColor='#b50000';
+	 t21 = 1;
+	winner();
+}
+function Fuenf(){
+	document.getElementById('5').style.backgroundColor='#b50000';
+	t22 = 1;
+	winner();
+}
+function Sechs(){
+	document.getElementById('6').style.backgroundColor='#b50000';
+	t23 = 1;
+	winner();
+}
+function Sieben(){
+	document.getElementById('7').style.backgroundColor='#b50000';
+	t31 = 1;
+	winner();
+}
+function Acht(){
+	document.getElementById('8').style.backgroundColor='#b50000';
+	t32 = 1;
+	winner();
+}
+function Neun(){
+	document.getElementById('9').style.backgroundColor='#b50000';
+	t33 = 1;
+	winner();
+}
+function winner(){
+	var wix1 = parseInt(t11) + parseInt(t12) + parseInt(t13);
+	var wix2 = parseInt(t21) + parseInt(t22) + parseInt(t23);//Horizontale
+	var wix3 = parseInt(t31) + parseInt(t32) + parseInt(t33);
+	var wix4 = parseInt(t11) + parseInt(t21) + parseInt(t31);
+	var wix5 = parseInt(t12) + parseInt(t22) + parseInt(t32);//Vertikalen
+	var wix6 = parseInt(t13) + parseInt(t23) + parseInt(t33);
+	var wix7 = parseInt(t11) + parseInt(t22) + parseInt(t33);//Diagonale
+	var wix8 = parseInt(t13) + parseInt(t22) + parseInt(t31);
+	if(wix1 == "3"){
+		alert("DU hast GEWONNEN");
+	}
+	else if(wix2 == "3"){
+		alert("DU hast GEWONNEN");
+	}
+	else if(wix3 == "3"){
+		alert("DU hast GEWONNEN");
+	}
+	else if(wix4 == "3"){
+		alert("DU hast GEWONNEN");
+	}
+	else if(wix5 == "3"){
+		alert("DU hast GEWONNEN");
+	}
+	else if(wix6 == "3"){
+		alert("DU hast GEWONNEN");
+	}
+	else if(wix7 == "3"){
+		alert("DU hast GEWONNEN");
+	}
+	else if(wix8 == "3"){
+		alert("DU hast GEWONNEN");
+	}
+}
+</script>
+</body>
+</html>
