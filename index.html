@@ -71,7 +71,15 @@ var t23 = 0;
 var t31 = 0;
 var t32 = 0;
 var t33 = 0;
-
+var clicked1 = 0;
+var clicked2 = 0;
+var clicked3 = 0;
+var clicked4 = 0;
+var clicked5 = 0;
+var clicked6 = 0;
+var clicked7 = 0;
+var clicked8 = 0;
+var clicked9 = 0;
 function calculate(){
 	//var rdm = Math.round(Math.random() * arr.length);
 	var numbers = new Array("Schlechter Witz", "Urlaub", "Witz über Ausländer", "Video", "Mit Medien rumspielen", "Technische Probleme", "Wir hängen hinterher", "Das schaffen wir nicht mehr", "Das kennt ihr nicht mehr", "Komische Geräusche", "Imitation", "Singt Lied");
@@ -119,52 +127,125 @@ calculate();
 function Eins(){
 	//document.td.style.backgroundColor = "red";
 	//document.getElementById("1").innerHTML = "WOW";
-	document.getElementById('1').style.backgroundColor='#b50000';
-	t11 = 1;
-	//document.getElementById("1").innerHTML = t11;
-	winner();
+	//document.getElementById('1').style.backgroundColor='#b50000';
+	/*if(document.getElementById('1').style.backgroundColor == "#b50000"){
+		document.getElementById('1').style.backgroundColor = "#2df700";
+	}*/
+	if(clicked1 == 0){
+		document.getElementById('1').style.backgroundColor = "#b50000";
+		clicked1 = 1;
+		t11 = 1;
+		winner();
+	}
+	else if(clicked1 == 1){
+		document.getElementById('1').style.backgroundColor = "#ffffff";
+		clicked1 = 0;
+		t11 = 0;
+	}
 }
 function Zwei(){
-	document.getElementById('2').style.backgroundColor='#b50000';
-	t12 = 1;
-	//document.getElementById("2").innerHTML = t12;
-	winner();
+	if(clicked2 == 0){
+		document.getElementById('2').style.backgroundColor = "#b50000";
+		clicked2 = 1;
+		t12 = 1;
+		winner();
+	}
+	else if(clicked2 == 1){
+		document.getElementById('2').style.backgroundColor = "#ffffff";
+		clicked2 = 0;
+		t12 = 0;
+	}
 }
 function Drei(){
-	document.getElementById('3').style.backgroundColor='#b50000';
-	t13 = 1;
-	//document.getElementById("3").innerHTML = t13;
-	winner();
+	if(clicked3 == 0){
+		document.getElementById('3').style.backgroundColor = "#b50000";
+		clicked3 = 1;
+		t13 = 1;
+		winner();
+	}
+	else if(clicked3 == 1){
+		document.getElementById('3').style.backgroundColor = "#ffffff";
+		clicked3 = 0;
+		t13 = 0;
+	}
 }
 function Vier(){
-	document.getElementById('4').style.backgroundColor='#b50000';
-	 t21 = 1;
-	winner();
+	if(clicked4 == 0){
+		document.getElementById('4').style.backgroundColor = "#b50000";
+		clicked4 = 1;
+		t21 = 1;
+		winner();
+	}
+	else if(clicked4 == 1){
+		document.getElementById('4').style.backgroundColor = "#ffffff";
+		clicked4 = 0;
+		t21 = 0;
+	}
 }
 function Fuenf(){
-	document.getElementById('5').style.backgroundColor='#b50000';
-	t22 = 1;
-	winner();
+	if(clicked5 == 0){
+		document.getElementById('5').style.backgroundColor = "#b50000";
+		clicked5 = 1;
+		t22 = 1;
+		winner();
+	}
+	else if(clicked5 == 1){
+		document.getElementById('5').style.backgroundColor = "#ffffff";
+		clicked5 = 0;
+		t22 = 0;
+	}
 }
 function Sechs(){
-	document.getElementById('6').style.backgroundColor='#b50000';
-	t23 = 1;
-	winner();
+	if(clicked6 == 0){
+		document.getElementById('6').style.backgroundColor = "#b50000";
+		clicked6 = 1;
+		t23 = 1;
+		winner();
+	}
+	else if(clicked6 == 1){
+		document.getElementById('6').style.backgroundColor = "#ffffff";
+		clicked6 = 0;
+		t23 = 0;
+	}
 }
 function Sieben(){
-	document.getElementById('7').style.backgroundColor='#b50000';
-	t31 = 1;
-	winner();
+	if(clicked7 == 0){
+		document.getElementById('7').style.backgroundColor = "#b50000";
+		clicked7 = 1;
+		t31 = 1;
+		winner();
+	}
+	else if(clicked7 == 1){
+		document.getElementById('7').style.backgroundColor = "#ffffff";
+		clicked7 = 0;
+		t31 = 0;
+	}
 }
 function Acht(){
-	document.getElementById('8').style.backgroundColor='#b50000';
-	t32 = 1;
-	winner();
+	if(clicked8 == 0){
+		document.getElementById('8').style.backgroundColor = "#b50000";
+		clicked8 = 1;
+		t32 = 1;
+		winner();
+	}
+	else if(clicked8 == 1){
+		document.getElementById('8').style.backgroundColor = "#ffffff";
+		clicked8 = 0;
+		t23 = 0;
+	}
 }
 function Neun(){
-	document.getElementById('9').style.backgroundColor='#b50000';
-	t33 = 1;
-	winner();
+	if(clicked9 == 0){
+		document.getElementById('9').style.backgroundColor = "#b50000";
+		clicked9 = 1;
+		t33 = 1;
+		winner();
+	}
+	else if(clicked9 == 1){
+		document.getElementById('9').style.backgroundColor = "#ffffff";
+		clicked9 = 0;
+		t33 = 0;
+	}
 }
 function winner(){
 	var wix1 = parseInt(t11) + parseInt(t12) + parseInt(t13);
